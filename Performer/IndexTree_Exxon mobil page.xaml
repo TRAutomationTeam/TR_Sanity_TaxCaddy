@@ -193,7 +193,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Try Body - IndexTree_ExxonPageAssociation" sap:VirtualizedContainerService.HintSize="541.6,1692" sap2010:WorkflowViewState.IdRef="Sequence_20">
+              <Sequence DisplayName="Try Body - IndexTree_ExxonPageAssociation" sap:VirtualizedContainerService.HintSize="541.6,1668" sap2010:WorkflowViewState.IdRef="Sequence_20">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="in_strBinderID" />
                 </Sequence.Variables>
@@ -350,7 +350,7 @@
                           </ui:AssignOperation>
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
                             <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:Object">[in_dtReporter(intComponentRowIndex)("Status")]</OutArgument>
+                              <OutArgument x:TypeArguments="x:Object">[in_dtReporter(intComponentRowIndex)("Execution Status")]</OutArgument>
                             </ui:AssignOperation.To>
                             <ui:AssignOperation.Value>
                               <InArgument x:TypeArguments="x:Object">["Failed"]</InArgument>
