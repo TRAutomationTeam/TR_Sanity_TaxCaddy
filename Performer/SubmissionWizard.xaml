@@ -83,9 +83,7 @@
       <x:String>TaxSoftware_Login.Sanity</x:String>
       <x:String>PingID</x:String>
       <x:String>System.Net</x:String>
-      <x:String>BinderCreationTaxCaddyLibrary</x:String>
       <x:String>Fileroom_Login</x:String>
-      <x:String>BinderCreationTaxCaddyLibrary.BinderCreationTaxCaddyLibrary</x:String>
       <x:String>TaxCaddy_SanityLibrary</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
@@ -209,7 +207,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="353.6,166.4" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="Chrome" />
-    <ui:IfElseIfV2 Condition="[(in_drRowToUpdate IsNot Nothing And String.IsNullOrEmpty(in_drRowToUpdate(&quot;ExpectedBinderID&quot;).ToString))]" DisplayName="Else If - Check Binder is present in Inputsheet" sap:VirtualizedContainerService.HintSize="353.6,48" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+    <ui:IfElseIfV2 Condition="[(in_drRowToUpdate IsNot Nothing And String.IsNullOrEmpty(in_drRowToUpdate(&quot;ExpectedBinderID&quot;).ToString))]" DisplayName="Else If - Check Binder is present in Inputsheet" sap:VirtualizedContainerService.HintSize="769.6,3544" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
       <ui:IfElseIfV2.Else>
         <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,254.4" sap2010:WorkflowViewState.IdRef="Sequence_39">
           <sap:WorkflowViewStateService.ViewState>
@@ -259,7 +257,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence DisplayName="Try Body - Submission Wizard" sap:VirtualizedContainerService.HintSize="540.8,2255.2" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                    <Sequence DisplayName="Try Body - Submission Wizard" sap:VirtualizedContainerService.HintSize="540.8,2198.4" sap2010:WorkflowViewState.IdRef="Sequence_21">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -283,35 +281,6 @@
                           <InArgument x:TypeArguments="x:String" />
                         </t:BinderCreationTaxCaddyLibrary_MainXmal.in_strExceptionScreenshot>
                       </t:BinderCreationTaxCaddyLibrary_MainXmal>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                        <ui:CommentOut.Body>
-                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,256" sap2010:WorkflowViewState.IdRef="Sequence_43">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="BinderCreationTaxCaddyLibrary_MainXmal - Invoke Workflow File (BinderCreationTaxCaddyLibrary\BinderCreationTaxCaddyLibrary_MainXmal.xaml)" sap:VirtualizedContainerService.HintSize="353.6,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="BinderCreationTaxCaddyLibrary\BinderCreationTaxCaddyLibrary_MainXmal.xaml">
-                              <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_strClientID">[in_drRowToUpdate("ClientID").ToString]</InArgument>
-                                <InOutArgument x:TypeArguments="x:String" x:Key="io_TaxYear">[io_TaxYear]</InOutArgument>
-                                <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_strExceptionMessage" />
-                                <InArgument x:TypeArguments="sd:DataTable" x:Key="inOut_dtTestSummaryReport">[in_dtTestSummaryReport]</InArgument>
-                                <InOutArgument x:TypeArguments="x:String" x:Key="io_strBinderID">[strBinderID]</InOutArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_strExceptionScreenshot" />
-                              </ui:InvokeWorkflowFile.Arguments>
-                            </ui:InvokeWorkflowFile>
-                          </Sequence>
-                        </ui:CommentOut.Body>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:CommentOut>
                       <ui:MultipleAssign sap2010:Annotation.AnnotationText="1. Update component status in Reporter&#xA;2. Update client id in Input sheet&#xA;3. Update component status in  Input sheet" DisplayName="Multiple Assign - Execution Status" sap:VirtualizedContainerService.HintSize="478.4,272" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                         <ui:MultipleAssign.AssignOperations>
                           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
