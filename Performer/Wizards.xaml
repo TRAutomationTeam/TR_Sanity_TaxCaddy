@@ -14,7 +14,7 @@
   <this:Wizards.io_TaxYear>
     <InArgument x:TypeArguments="x:String" />
   </this:Wizards.io_TaxYear>
-  <sap:VirtualizedContainerService.HintSize>1578.4,2427.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1408.8,1470.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -171,7 +171,7 @@
       <AssemblyReference>Fileroom_Login</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Wizards" sap:VirtualizedContainerService.HintSize="1588.8,2362.4" sap2010:WorkflowViewState.IdRef="Sequence_18">
+  <Sequence DisplayName="Wizards" sap:VirtualizedContainerService.HintSize="739.2,1405.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:DateTime" Name="dtStartTime" />
       <Variable x:TypeArguments="x:String" Default="Wizards" Name="strFlowName" />
@@ -182,7 +182,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[Not in_TransactionItem.Progress.Contains(strFlowName+&quot; Success&quot;)]" DisplayName="If - Wizard is successfully run?" sap:VirtualizedContainerService.HintSize="1526.4,2273.6" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[Not in_TransactionItem.Progress.Contains(strFlowName+&quot; Success&quot;)]" DisplayName="If - Wizard is successfully run?" sap:VirtualizedContainerService.HintSize="676.8,1316.8" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -190,13 +190,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1492.8,1857.6" sap2010:WorkflowViewState.IdRef="Sequence_22">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="643.2,900.8" sap2010:WorkflowViewState.IdRef="Sequence_22">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="Try Catch - Wizards" sap:VirtualizedContainerService.HintSize="1430.4,1768.8" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+          <TryCatch DisplayName="Try Catch - Wizards" sap:VirtualizedContainerService.HintSize="580.8,812" sap2010:WorkflowViewState.IdRef="TryCatch_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -679,10 +679,10 @@
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1396.8,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="547.2,624.8" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -726,7 +726,7 @@
                           </ui:AssignOperation>
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
                             <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:Object">[in_dtReporter(intComponentRowIndex)("Execption")]</OutArgument>
+                              <OutArgument x:TypeArguments="x:Object">[in_dtReporter(intComponentRowIndex)("Exception")]</OutArgument>
                             </ui:AssignOperation.To>
                             <ui:AssignOperation.Value>
                               <InArgument x:TypeArguments="x:Object">[exception.Message]</InArgument>

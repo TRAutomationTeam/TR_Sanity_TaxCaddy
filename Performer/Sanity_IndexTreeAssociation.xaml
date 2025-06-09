@@ -23,7 +23,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1793,2299</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1408.8,1580</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ThumbnailPageAssociationD_D_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -151,15 +151,18 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>Sanity_ThumbnailPageAssociation</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sanity_IndexTreeAssociation" sap:VirtualizedContainerService.HintSize="799,2234" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sanity_IndexTreeAssociation" sap:VirtualizedContainerService.HintSize="801.6,1515.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="IndexTree_ExxonPageAssociation" sap:VirtualizedContainerService.HintSize="737,2146" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="IndexTree_ExxonPageAssociation" sap:VirtualizedContainerService.HintSize="739.2,1426.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:DateTime" Name="dtStartTime" />
         <Variable x:TypeArguments="x:String" Default="Sanity_IndexTreeAssociation" Name="strFlowName" />
@@ -170,7 +173,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[Not in_TransactionItem.Progress.Contains(strFlowName+&quot; Success&quot;)]" DisplayName="If - IndexTree_ExxonPageAssociation is successfully run?" sap:VirtualizedContainerService.HintSize="675,2035" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[Not in_TransactionItem.Progress.Contains(strFlowName+&quot; Success&quot;)]" DisplayName="If - IndexTree_ExxonPageAssociation is successfully run?" sap:VirtualizedContainerService.HintSize="676.8,1314.4" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -178,13 +181,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="641,1622" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="643.2,900.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch - IndexTree_ExxonPageAssociation" sap:VirtualizedContainerService.HintSize="579,1534" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch - IndexTree_ExxonPageAssociation" sap:VirtualizedContainerService.HintSize="580.8,812" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -192,7 +195,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <Sequence DisplayName="Try Body - IndexTree_ExxonPageAssociation" sap:VirtualizedContainerService.HintSize="541,1283" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Try Body - IndexTree_ExxonPageAssociation" sap:VirtualizedContainerService.HintSize="541.6,1300" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="in_strBinderID" />
                   </Sequence.Variables>
@@ -202,7 +205,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="479.2,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                     <ui:CommentOut.Body>
                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,288" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
@@ -242,8 +245,8 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CommentOut>
-                  <ui:LogMessage DisplayName="Log Message - Execution Started" sap:VirtualizedContainerService.HintSize="479,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;************************************************************************&quot;+strFlowName+&quot; Started************************************************************************&quot;]" />
-                  <Assign DisplayName="Assign - Application Start Time" sap:VirtualizedContainerService.HintSize="479,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <ui:LogMessage DisplayName="Log Message - Execution Started" sap:VirtualizedContainerService.HintSize="479.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;************************************************************************&quot;+strFlowName+&quot; Started************************************************************************&quot;]" />
+                  <Assign DisplayName="Assign - Application Start Time" sap:VirtualizedContainerService.HintSize="479.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
                     <Assign.To>
                       <OutArgument x:TypeArguments="s:DateTime">[dtStartTime]</OutArgument>
                     </Assign.To>
@@ -251,7 +254,7 @@
                       <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:MultipleAssign sap2010:Annotation.AnnotationText="1. Update component status in Reporter&#xA;2. Update component status in  Input sheet" DisplayName="Multiple Assign - Execution Status" sap:VirtualizedContainerService.HintSize="479,221" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                  <ui:MultipleAssign sap2010:Annotation.AnnotationText="1. Update component status in Reporter&#xA;2. Update component status in  Input sheet" DisplayName="Multiple Assign - Execution Status" sap:VirtualizedContainerService.HintSize="479.2,224" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -323,10 +326,10 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="545,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="547.2,624.8" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -334,14 +337,14 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="540,553" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="540.8,553.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign - SCD_VerificationQueue - Failed" sap:VirtualizedContainerService.HintSize="478,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign DisplayName="Assign - SCD_VerificationQueue - Failed" sap:VirtualizedContainerService.HintSize="478.4,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Object">[in_drRowToUpdate("Status")]</OutArgument>
                         </Assign.To>
@@ -349,8 +352,8 @@
                           <InArgument x:TypeArguments="x:Object">[strFlowName+" - Failed"]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:WriteRange StartingCell="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[in_dtInputData]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="478,148" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="[in_Config(&quot;SanityTest_InputFileSheetName&quot;).ToString]" WorkbookPath="[in_Config(&quot;SanityTest_InputFilePath&quot;).ToString]" />
-                      <ui:MultipleAssign DisplayName="Multiple Assign - Exception Details" sap:VirtualizedContainerService.HintSize="478,203" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                      <ui:WriteRange StartingCell="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[in_dtInputData]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="478.4,148" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="[in_Config(&quot;SanityTest_InputFileSheetName&quot;).ToString]" WorkbookPath="[in_Config(&quot;SanityTest_InputFilePath&quot;).ToString]" />
+                      <ui:MultipleAssign DisplayName="Multiple Assign - Exception Details" sap:VirtualizedContainerService.HintSize="478.4,203.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                         <ui:MultipleAssign.AssignOperations>
                           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -371,7 +374,7 @@
                             </ui:AssignOperation>
                             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
                               <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="x:Object">[in_dtReporter(intComponentRowIndex)("Execption")]</OutArgument>
+                                <OutArgument x:TypeArguments="x:Object">[in_dtReporter(intComponentRowIndex)("Exception")]</OutArgument>
                               </ui:AssignOperation.To>
                               <ui:AssignOperation.Value>
                                 <InArgument x:TypeArguments="x:Object">[exception.Message]</InArgument>
