@@ -5,7 +5,7 @@
   "main": "Main.xaml",
   "dependencies": {
     "Cloning_MasterTaxClient": "[1.0.16]",
-    "ExceptionClassifier": "[1.0.4]",
+    "ExceptionClassifier": "[1.0.5]",
     "Fileroom_Login": "[1.0.5]",
     "Review_Wizards": "[1.0.47]",
     "Sanity_ExportValidation": "[1.0.3]",
@@ -29,7 +29,7 @@
     "UiPath.Excel.Activities": "[2.24.4]",
     "UiPath.System.Activities": "[24.10.7]",
     "UiPath.Testing.Activities": "[24.10.3]",
-    "UiPath.UIAutomation.Activities": "[24.10.10]"
+    "UiPath.UIAutomation.Activities": "[23.10.13]"
   },
   "webServices": [],
   "entitiesStores": [
