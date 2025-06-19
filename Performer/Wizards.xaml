@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Wizards" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:f="clr-namespace:Fileroom_Login;assembly=Fileroom_Login" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="clr-namespace:PingID;assembly=PingID" xmlns:r="clr-namespace:Review_Wizards;assembly=Review_Wizards" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Wizards" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:f="clr-namespace:Fileroom_Login;assembly=Fileroom_Login" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:r="clr-namespace:Review_Wizards;assembly=Review_Wizards" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
@@ -14,7 +14,7 @@
   <this:Wizards.io_TaxYear>
     <InArgument x:TypeArguments="x:String" />
   </this:Wizards.io_TaxYear>
-  <sap:VirtualizedContainerService.HintSize>1408.8,1470.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1408.8,5800.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -171,18 +171,27 @@
       <AssemblyReference>Fileroom_Login</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Wizards" sap:VirtualizedContainerService.HintSize="739.2,1405.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Wizards" sap:VirtualizedContainerService.HintSize="1396.8,5736" sap2010:WorkflowViewState.IdRef="Sequence_18">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:DateTime" Name="dtStartTime" />
       <Variable x:TypeArguments="x:String" Default="Wizards" Name="strFlowName" />
-      <Variable x:TypeArguments="x:Int32" Default="2" Name="intComponentRowIndex" />
+      <Variable x:TypeArguments="x:Int32" Name="intComponentRowIndex">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="2" />
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[Not in_TransactionItem.Progress.Contains(strFlowName+&quot; Success&quot;)]" DisplayName="If - Wizard is successfully run?" sap:VirtualizedContainerService.HintSize="676.8,1316.8" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[Not in_TransactionItem.Progress.Contains(strFlowName+&quot; Success&quot;)]" DisplayName="If - Wizard is successfully run?" sap:VirtualizedContainerService.HintSize="1334.4,5647.2" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -190,13 +199,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="643.2,900.8" sap2010:WorkflowViewState.IdRef="Sequence_22">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1300.8,5231.2" sap2010:WorkflowViewState.IdRef="Sequence_22">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="Try Catch - Wizards" sap:VirtualizedContainerService.HintSize="580.8,812" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+          <TryCatch DisplayName="Try Catch - Wizards" sap:VirtualizedContainerService.HintSize="1238.4,5142.4" sap2010:WorkflowViewState.IdRef="TryCatch_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -204,21 +213,21 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Try Body - Wizards" sap:VirtualizedContainerService.HintSize="1201.6,1472.8" sap2010:WorkflowViewState.IdRef="Sequence_26">
+              <Sequence DisplayName="Try Body - Wizards" sap:VirtualizedContainerService.HintSize="1201.6,3552" sap2010:WorkflowViewState.IdRef="Sequence_26">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Sequence - Fileroom activate " sap:VirtualizedContainerService.HintSize="1139.2,56.8" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                <Sequence DisplayName="Sequence - Fileroom activate " sap:VirtualizedContainerService.HintSize="1139.2,2094.4" sap2010:WorkflowViewState.IdRef="Sequence_35">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check App State 'FileRoom'" sap:VirtualizedContainerService.HintSize="1076.8,1828.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'FileRoom'" sap:VirtualizedContainerService.HintSize="1076.8,1772" sap2010:WorkflowViewState.IdRef="NCheckState_1" Version="V3">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,1399.2" sap2010:WorkflowViewState.IdRef="Sequence_36">
                         <sap:WorkflowViewStateService.ViewState>
@@ -247,10 +256,10 @@
                                     </scg:List>
                                   </uix:NSelectItem.Items>
                                   <uix:NSelectItem.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" CVScreenId="a2ac93d1-4dc7-4c60-b6ee-3bd1e928e0a9" CvElementArea="932, 298, 25, 22" CvTextArea="876, 302, 35, 13" CvTextArgument="2024" CvType="ArrowButton" DesignTimeRectangle="874, 297, 84, 23" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'20242024'" FullSelectorArgument="&lt;webctrl tag='TABLE' parentclass='collapseAll navbar-collapse' /&gt;&lt;webctrl aria-role='listbox' tableRow='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' parentclass='collapseAll navbar-collapse' /&gt;&lt;webctrl aria-role='listbox' type='' tag='SPAN' class='k-widget k-dropdown ddlstyle' aaname='' /&gt;" Guid="ecbd873e-9801-4c26-a0a7-f4cfa749513c" ImageBase64="" InformativeScreenshot="e9b7ba5e283d71deec1b632b31b4988e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" CVScreenId="a2ac93d1-4dc7-4c60-b6ee-3bd1e928e0a9" DesignTimeRectangle="874, 232, 84, 22" DesignTimeScaleFactor="1.25" ElementType="DropDown" FullSelectorArgument="&lt;webctrl tag='TABLE' parentclass='collapseAll navbar-collapse' /&gt;&lt;webctrl aria-role='listbox' tableRow='1' tag='SPAN' /&gt;" Guid="ecbd873e-9801-4c26-a0a7-f4cfa749513c" ImageBase64="" InformativeScreenshot="b164fb9a753934c2aa2a8a35b457d013.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                                       <uix:TargetAnchorable.Anchors>
-                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                          <uix:Target CVScreenId="a2ac93d1-4dc7-4c60-b6ee-3bd1e928e0a9" CvTextArea="971, 300, 118, 15" CvTextArgument="Show All Binders" CvType="Text" DesignTimeRectangle="970, 297, 125, 23" ElementType="Text" FriendlyName="'Show All Binders'" FullSelectorArgument="&lt;webctrl tag='TABLE' parentclass='collapseAll navbar-collapse' /&gt;&lt;webctrl aaname='Show All Binders' aria-role='option' tableRow='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' parentclass='collapseAll navbar-collapse' /&gt;&lt;webctrl aaname='Show All Binders' aria-role='option' type='' tag='SPAN' class='k-input' check:text='Show All Binders' /&gt;" SearchSteps="Selector" />
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                          <uix:Target CVScreenId="a2ac93d1-4dc7-4c60-b6ee-3bd1e928e0a9" DesignTimeRectangle="970, 232, 125, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' parentclass='collapseAll navbar-collapse' /&gt;&lt;webctrl aaname='Show All Binders' aria-role='option' tableRow='1' tag='SPAN' /&gt;" Guid="f07bfb9c-8d43-4066-8137-6c0e71c38796" SearchSteps="Selector" />
                                         </scg:List>
                                       </uix:TargetAnchorable.Anchors>
                                     </uix:TargetAnchorable>
@@ -258,10 +267,10 @@
                                 </uix:NSelectItem>
                                 <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="5" DisplayName="Type Into 'FileRoom'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="e58fda08-b647-4b6b-a295-a93a5b81607f" Text="[in_strBinderID + &quot;[k(Enter)]&quot;]" Version="V3">
                                   <uix:NTypeInto.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" CVScreenId="0cc5afe0-7510-472c-b89d-5dc87f67a259" CvElementArea="1699, 290, 196, 33" CvType="InputBox" DesignTimeRectangle="1701, 295, 190, 25" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT txtSearch'" FullSelectorArgument="&lt;webctrl aria-role='presentation' tag='TABLE' parentclass='fr-command-buttons-box' /&gt;&lt;webctrl id='txtSearch' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' tag='TABLE' parentclass='fr-command-buttons-box' /&gt;&lt;webctrl id='txtSearch' type='text' tag='INPUT' class='fr-searchbox' aaname='' /&gt;" Guid="d20a2ab9-2b5d-4027-9d63-8708f21e22f5" InformativeScreenshot="1cd0eeae8d2f03b371b05c5be13af8d6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" CVScreenId="0cc5afe0-7510-472c-b89d-5dc87f67a259" CvElementArea="1699, 290, 196, 33" CvType="InputBox" DesignTimeRectangle="1701, 295, 190, 25" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl aria-role='presentation' tag='TABLE' parentclass='fr-command-buttons-box' /&gt;&lt;webctrl id='txtSearch' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' tag='TABLE' parentclass='fr-command-buttons-box' /&gt;&lt;webctrl id='txtSearch' type='text' tag='INPUT' class='fr-searchbox' aaname='' /&gt;" Guid="d20a2ab9-2b5d-4027-9d63-8708f21e22f5" InformativeScreenshot="1cd0eeae8d2f03b371b05c5be13af8d6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                                       <uix:TargetAnchorable.Anchors>
                                         <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                          <uix:Target CVScreenId="0cc5afe0-7510-472c-b89d-5dc87f67a259" CvTextArea="1815, 247, 67, 15" CvTextArgument="FileRoom" CvType="Text" DesignTimeRectangle="1804, 238, 108, 36" FriendlyName="'FileRoom'" FullSelectorArgument="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl class='inner-div' parentid='product-dropdown-btn' tableRow='1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='inner-div' parentid='product-dropdown-btn' type='' tag='DIV' aaname='                                                      ' check:innerText='FileRoom' /&gt;" SearchSteps="Selector" />
+                                          <uix:Target CVScreenId="0cc5afe0-7510-472c-b89d-5dc87f67a259" CvTextArea="1815, 247, 67, 15" CvTextArgument="FileRoom" CvType="Text" DesignTimeRectangle="1804, 238, 108, 36" FullSelectorArgument="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl class='inner-div' parentid='product-dropdown-btn' tableRow='1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='inner-div' parentid='product-dropdown-btn' type='' tag='DIV' aaname='                                                      ' check:innerText='FileRoom' /&gt;" Guid="8ecdbb19-f17c-4f92-947a-6603798c5979" SearchSteps="Selector" />
                                         </scg:List>
                                       </uix:TargetAnchorable.Anchors>
                                     </uix:TargetAnchorable>
@@ -279,10 +288,10 @@
                                 </uix:NTypeInto>
                                 <uix:NHover DisplayName="Hover 'Options'" sap:VirtualizedContainerService.HintSize="353.6,225.6" sap2010:WorkflowViewState.IdRef="NHover_1" ScopeIdentifier="e58fda08-b647-4b6b-a295-a93a5b81607f" Version="V3">
                                   <uix:NHover.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" DesignTimeRectangle="223, 451, 100, 37" DesignTimeScaleFactor="1.25" FriendlyName="'TD'" FullSelectorArgument="&lt;webctrl aria-role='grid' class='k-selectable' tag='TABLE' /&gt;&lt;webctrl class='binderbtn' tableRow='1' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' class='k-selectable' tag='TABLE' /&gt;&lt;webctrl class='binderbtn' type='' tag='TD' aaname='' /&gt;" Guid="6b9f9c1e-b9e1-4006-a0fb-cf7b8a631582" InformativeScreenshot="13dbcd79a18c72206cfb41d9254cc036.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" DesignTimeRectangle="223, 451, 100, 37" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl aria-role='grid' class='k-selectable' tag='TABLE' /&gt;&lt;webctrl class='binderbtn' tableRow='1' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' class='k-selectable' tag='TABLE' /&gt;&lt;webctrl class='binderbtn' type='' tag='TD' aaname='' /&gt;" Guid="6b9f9c1e-b9e1-4006-a0fb-cf7b8a631582" InformativeScreenshot="13dbcd79a18c72206cfb41d9254cc036.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                                       <uix:TargetAnchorable.Anchors>
                                         <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                          <uix:Target CVScreenId="59afa239-c4b2-499b-b669-2402bee69328" CvTextArea="230, 426, 66, 15" CvTextArgument="OPTIONS" CvType="Text" DesignTimeRectangle="223, 417, 100, 34" ElementType="Text" FriendlyName="'Options'" FullSelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' type='' tag='TH' class='k-header disable-resize' check:innerText='OPTIONS' /&gt;" SearchSteps="Selector, CV" />
+                                          <uix:Target CVScreenId="59afa239-c4b2-499b-b669-2402bee69328" CvTextArea="230, 426, 66, 15" CvTextArgument="OPTIONS" CvType="Text" DesignTimeRectangle="223, 417, 100, 34" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' type='' tag='TH' class='k-header disable-resize' check:innerText='OPTIONS' /&gt;" Guid="23451cb1-ff3a-4ca5-a7d3-a36516236a53" SearchSteps="Selector, CV" />
                                         </scg:List>
                                       </uix:TargetAnchorable.Anchors>
                                     </uix:TargetAnchorable>
@@ -300,10 +309,10 @@
                                 </uix:NHover>
                                 <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Options'" sap:VirtualizedContainerService.HintSize="353.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e58fda08-b647-4b6b-a295-a93a5b81607f" Version="V3">
                                   <uix:NClick.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" DesignTimeRectangle="235, 456, 25, 25" DesignTimeScaleFactor="1.25" FriendlyName="'A #'" FullSelectorArgument="&lt;webctrl parentid='FileroomGrid_Row_0' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='FileroomGrid_Row_0' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='fr-open openLink' aaname='                                     ' /&gt;" Guid="94c989b3-3b28-46aa-a836-27b378f826e3" InformativeScreenshot="aacb227eb12e97ee832c9fefa7325490.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" DesignTimeRectangle="235, 456, 25, 25" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl parentid='FileroomGrid_Row_0' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='FileroomGrid_Row_0' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='fr-open openLink' aaname='                                     ' /&gt;" Guid="94c989b3-3b28-46aa-a836-27b378f826e3" InformativeScreenshot="aacb227eb12e97ee832c9fefa7325490.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                                       <uix:TargetAnchorable.Anchors>
                                         <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                          <uix:Target CVScreenId="fd1e3f88-cbb4-418d-85e0-018001ec6589" CvTextArea="230, 426, 66, 15" CvTextArgument="OPTIONS" CvType="Text" DesignTimeRectangle="223, 417, 100, 34" ElementType="Text" FriendlyName="'Options'" FullSelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' type='' tag='TH' class='k-header disable-resize' check:innerText='OPTIONS' /&gt;" SearchSteps="Selector" />
+                                          <uix:Target CVScreenId="fd1e3f88-cbb4-418d-85e0-018001ec6589" CvTextArea="230, 426, 66, 15" CvTextArgument="OPTIONS" CvType="Text" DesignTimeRectangle="223, 417, 100, 34" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' type='' tag='TH' class='k-header disable-resize' check:innerText='OPTIONS' /&gt;" Guid="e4557d38-cc56-41a4-87b2-a2daba1e537d" SearchSteps="Selector" />
                                         </scg:List>
                                       </uix:TargetAnchorable.Anchors>
                                     </uix:TargetAnchorable>
@@ -351,7 +360,7 @@
                                             </Sequence>
                                           </uix:NCheckState.IfNotExists>
                                           <uix:NCheckState.Target>
-                                            <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1093, 629" DesignTimeScaleFactor="1.25" FriendlyName="'1040SCAN :'" Guid="6d91589f-2957-4682-82f7-8267de271f93" InformativeScreenshot="9845e135a819718ec8d6d578cedac1e1.png" ScopeSelectorArgument="&lt;wnd app='spreviewwizard.exe' ctrlname='Verification' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                                            <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1093, 629" DesignTimeScaleFactor="1.25" Guid="6d91589f-2957-4682-82f7-8267de271f93" InformativeScreenshot="9845e135a819718ec8d6d578cedac1e1.png" ScopeSelectorArgument="&lt;wnd app='spreviewwizard.exe' ctrlname='Verification' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                                               <uix:TargetAnchorable.FuzzySelectorArgument>
                                                 <InArgument x:TypeArguments="x:String">
                                                   <Literal x:TypeArguments="x:String" Value="" />
@@ -383,31 +392,13 @@
                       </Sequence>
                     </uix:NCheckState.IfExists>
                     <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="512,1578.4" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="512,1521.6" sap2010:WorkflowViewState.IdRef="Sequence_38">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <f:Fileroom_Login sap:VirtualizedContainerService.HintSize="449.6,122.4" sap2010:WorkflowViewState.IdRef="Fileroom_Login_1" in_Config="[in_Config]" />
-                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                          <ui:CommentOut.Body>
-                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,410.4" sap2010:WorkflowViewState.IdRef="Sequence_49">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <p:PingId_Authentication sap:VirtualizedContainerService.HintSize="353.6,321.6" sap2010:WorkflowViewState.IdRef="PingId_Authentication_2" in_Config="[in_Config]" in_TransactionItem="[in_TransactionItem]" in_isAPI="No" in_strBinderId="[in_strBinderID]" io_dtTestSummaryReport="[in_dtTestSummaryReport]" />
-                            </Sequence>
-                          </ui:CommentOut.Body>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </ui:CommentOut>
                         <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: FileRoom" sap:VirtualizedContainerService.HintSize="449.6,1308.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="e58fda08-b647-4b6b-a295-a93a5b81607f" Version="V2">
                           <uix:NApplicationCard.Body>
                             <ActivityAction x:TypeArguments="x:Object">
@@ -432,10 +423,10 @@
                                     </scg:List>
                                   </uix:NSelectItem.Items>
                                   <uix:NSelectItem.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" CVScreenId="a2ac93d1-4dc7-4c60-b6ee-3bd1e928e0a9" CvElementArea="932, 298, 25, 22" CvTextArea="876, 302, 35, 13" CvTextArgument="2024" CvType="ArrowButton" DesignTimeRectangle="874, 297, 84, 23" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'20242024'" FullSelectorArgument="&lt;webctrl tag='TABLE' parentclass='collapseAll navbar-collapse' /&gt;&lt;webctrl aria-role='listbox' tableRow='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' parentclass='collapseAll navbar-collapse' /&gt;&lt;webctrl aria-role='listbox' type='' tag='SPAN' class='k-widget k-dropdown ddlstyle' aaname='' /&gt;" Guid="ecbd873e-9801-4c26-a0a7-f4cfa749513c" ImageBase64="" InformativeScreenshot="e9b7ba5e283d71deec1b632b31b4988e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" CVScreenId="a2ac93d1-4dc7-4c60-b6ee-3bd1e928e0a9" DesignTimeRectangle="874, 232, 84, 22" DesignTimeScaleFactor="1.25" ElementType="DropDown" FullSelectorArgument="&lt;webctrl tag='TABLE' parentclass='collapseAll navbar-collapse' /&gt;&lt;webctrl aria-role='listbox' tableRow='1' tag='SPAN' /&gt;" Guid="ecbd873e-9801-4c26-a0a7-f4cfa749513c" ImageBase64="" InformativeScreenshot="b164fb9a753934c2aa2a8a35b457d013.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                                       <uix:TargetAnchorable.Anchors>
-                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                          <uix:Target CVScreenId="a2ac93d1-4dc7-4c60-b6ee-3bd1e928e0a9" CvTextArea="971, 300, 118, 15" CvTextArgument="Show All Binders" CvType="Text" DesignTimeRectangle="970, 297, 125, 23" ElementType="Text" FriendlyName="'Show All Binders'" FullSelectorArgument="&lt;webctrl tag='TABLE' parentclass='collapseAll navbar-collapse' /&gt;&lt;webctrl aaname='Show All Binders' aria-role='option' tableRow='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' parentclass='collapseAll navbar-collapse' /&gt;&lt;webctrl aaname='Show All Binders' aria-role='option' type='' tag='SPAN' class='k-input' check:text='Show All Binders' /&gt;" SearchSteps="Selector" />
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                          <uix:Target CVScreenId="a2ac93d1-4dc7-4c60-b6ee-3bd1e928e0a9" DesignTimeRectangle="970, 232, 125, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' parentclass='collapseAll navbar-collapse' /&gt;&lt;webctrl aaname='Show All Binders' aria-role='option' tableRow='1' tag='SPAN' /&gt;" Guid="75a0b20d-3e01-49f8-ae4e-6a8f69b76298" SearchSteps="Selector" />
                                         </scg:List>
                                       </uix:TargetAnchorable.Anchors>
                                     </uix:TargetAnchorable>
@@ -443,10 +434,10 @@
                                 </uix:NSelectItem>
                                 <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="5" DisplayName="Type Into 'FileRoom'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="e58fda08-b647-4b6b-a295-a93a5b81607f" Text="[in_strBinderID + &quot;[k(Enter)]&quot;]" Version="V3">
                                   <uix:NTypeInto.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" CVScreenId="0cc5afe0-7510-472c-b89d-5dc87f67a259" CvElementArea="1699, 290, 196, 33" CvType="InputBox" DesignTimeRectangle="1701, 295, 190, 25" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT txtSearch'" FullSelectorArgument="&lt;webctrl aria-role='presentation' tag='TABLE' parentclass='fr-command-buttons-box' /&gt;&lt;webctrl id='txtSearch' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' tag='TABLE' parentclass='fr-command-buttons-box' /&gt;&lt;webctrl id='txtSearch' type='text' tag='INPUT' class='fr-searchbox' aaname='' /&gt;" Guid="d20a2ab9-2b5d-4027-9d63-8708f21e22f5" InformativeScreenshot="1cd0eeae8d2f03b371b05c5be13af8d6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" CVScreenId="0cc5afe0-7510-472c-b89d-5dc87f67a259" CvElementArea="1699, 290, 196, 33" CvType="InputBox" DesignTimeRectangle="1701, 295, 190, 25" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl aria-role='presentation' tag='TABLE' parentclass='fr-command-buttons-box' /&gt;&lt;webctrl id='txtSearch' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' tag='TABLE' parentclass='fr-command-buttons-box' /&gt;&lt;webctrl id='txtSearch' type='text' tag='INPUT' class='fr-searchbox' aaname='' /&gt;" Guid="d20a2ab9-2b5d-4027-9d63-8708f21e22f5" InformativeScreenshot="1cd0eeae8d2f03b371b05c5be13af8d6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                                       <uix:TargetAnchorable.Anchors>
                                         <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                          <uix:Target CVScreenId="0cc5afe0-7510-472c-b89d-5dc87f67a259" CvTextArea="1815, 247, 67, 15" CvTextArgument="FileRoom" CvType="Text" DesignTimeRectangle="1804, 238, 108, 36" FriendlyName="'FileRoom'" FullSelectorArgument="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl class='inner-div' parentid='product-dropdown-btn' tableRow='1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='inner-div' parentid='product-dropdown-btn' type='' tag='DIV' aaname='                                                      ' check:innerText='FileRoom' /&gt;" SearchSteps="Selector" />
+                                          <uix:Target CVScreenId="0cc5afe0-7510-472c-b89d-5dc87f67a259" CvTextArea="1815, 247, 67, 15" CvTextArgument="FileRoom" CvType="Text" DesignTimeRectangle="1804, 238, 108, 36" FullSelectorArgument="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl class='inner-div' parentid='product-dropdown-btn' tableRow='1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='inner-div' parentid='product-dropdown-btn' type='' tag='DIV' aaname='                                                      ' check:innerText='FileRoom' /&gt;" Guid="c78cb456-0259-4208-8ca2-a4117ddd5782" SearchSteps="Selector" />
                                         </scg:List>
                                       </uix:TargetAnchorable.Anchors>
                                     </uix:TargetAnchorable>
@@ -464,10 +455,10 @@
                                 </uix:NTypeInto>
                                 <uix:NHover DisplayName="Hover 'Options'" sap:VirtualizedContainerService.HintSize="353.6,225.6" sap2010:WorkflowViewState.IdRef="NHover_2" ScopeIdentifier="e58fda08-b647-4b6b-a295-a93a5b81607f" Version="V3">
                                   <uix:NHover.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" DesignTimeRectangle="223, 451, 100, 37" DesignTimeScaleFactor="1.25" FriendlyName="'TD'" FullSelectorArgument="&lt;webctrl aria-role='grid' class='k-selectable' tag='TABLE' /&gt;&lt;webctrl class='binderbtn' tableRow='1' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' class='k-selectable' tag='TABLE' /&gt;&lt;webctrl class='binderbtn' type='' tag='TD' aaname='' /&gt;" Guid="6b9f9c1e-b9e1-4006-a0fb-cf7b8a631582" InformativeScreenshot="13dbcd79a18c72206cfb41d9254cc036.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" DesignTimeRectangle="223, 451, 100, 37" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl aria-role='grid' class='k-selectable' tag='TABLE' /&gt;&lt;webctrl class='binderbtn' tableRow='1' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' class='k-selectable' tag='TABLE' /&gt;&lt;webctrl class='binderbtn' type='' tag='TD' aaname='' /&gt;" Guid="6b9f9c1e-b9e1-4006-a0fb-cf7b8a631582" InformativeScreenshot="13dbcd79a18c72206cfb41d9254cc036.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                                       <uix:TargetAnchorable.Anchors>
                                         <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                          <uix:Target CVScreenId="59afa239-c4b2-499b-b669-2402bee69328" CvTextArea="230, 426, 66, 15" CvTextArgument="OPTIONS" CvType="Text" DesignTimeRectangle="223, 417, 100, 34" ElementType="Text" FriendlyName="'Options'" FullSelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' type='' tag='TH' class='k-header disable-resize' check:innerText='OPTIONS' /&gt;" SearchSteps="Selector, CV" />
+                                          <uix:Target CVScreenId="59afa239-c4b2-499b-b669-2402bee69328" CvTextArea="230, 426, 66, 15" CvTextArgument="OPTIONS" CvType="Text" DesignTimeRectangle="223, 417, 100, 34" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' type='' tag='TH' class='k-header disable-resize' check:innerText='OPTIONS' /&gt;" Guid="aedb55f9-9ab8-4292-ac52-b108a9bf6f81" SearchSteps="Selector, CV" />
                                         </scg:List>
                                       </uix:TargetAnchorable.Anchors>
                                     </uix:TargetAnchorable>
@@ -485,10 +476,10 @@
                                 </uix:NHover>
                                 <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Options'" sap:VirtualizedContainerService.HintSize="353.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e58fda08-b647-4b6b-a295-a93a5b81607f" Version="V3">
                                   <uix:NClick.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" DesignTimeRectangle="235, 456, 25, 25" DesignTimeScaleFactor="1.25" FriendlyName="'A #'" FullSelectorArgument="&lt;webctrl parentid='FileroomGrid_Row_0' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='FileroomGrid_Row_0' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='fr-open openLink' aaname='                                     ' /&gt;" Guid="94c989b3-3b28-46aa-a836-27b378f826e3" InformativeScreenshot="aacb227eb12e97ee832c9fefa7325490.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" DesignTimeRectangle="235, 456, 25, 25" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl parentid='FileroomGrid_Row_0' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='FileroomGrid_Row_0' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='fr-open openLink' aaname='                                     ' /&gt;" Guid="94c989b3-3b28-46aa-a836-27b378f826e3" InformativeScreenshot="aacb227eb12e97ee832c9fefa7325490.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                                       <uix:TargetAnchorable.Anchors>
                                         <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                          <uix:Target CVScreenId="fd1e3f88-cbb4-418d-85e0-018001ec6589" CvTextArea="230, 426, 66, 15" CvTextArgument="OPTIONS" CvType="Text" DesignTimeRectangle="223, 417, 100, 34" ElementType="Text" FriendlyName="'Options'" FullSelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' type='' tag='TH' class='k-header disable-resize' check:innerText='OPTIONS' /&gt;" SearchSteps="Selector" />
+                                          <uix:Target CVScreenId="fd1e3f88-cbb4-418d-85e0-018001ec6589" CvTextArea="230, 426, 66, 15" CvTextArgument="OPTIONS" CvType="Text" DesignTimeRectangle="223, 417, 100, 34" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='Options' type='' tag='TH' class='k-header disable-resize' check:innerText='OPTIONS' /&gt;" Guid="6e13763c-5319-473f-ba00-1e75a8dbea6c" SearchSteps="Selector" />
                                         </scg:List>
                                       </uix:TargetAnchorable.Anchors>
                                     </uix:TargetAnchorable>
@@ -536,7 +527,7 @@
                                             </Sequence>
                                           </uix:NCheckState.IfNotExists>
                                           <uix:NCheckState.Target>
-                                            <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1093, 629" DesignTimeScaleFactor="1.25" FriendlyName="'1040SCAN :'" Guid="6d91589f-2957-4682-82f7-8267de271f93" InformativeScreenshot="9845e135a819718ec8d6d578cedac1e1.png" ScopeSelectorArgument="&lt;wnd app='spreviewwizard.exe' ctrlname='Verification' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                                            <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1093, 629" DesignTimeScaleFactor="1.25" Guid="6d91589f-2957-4682-82f7-8267de271f93" InformativeScreenshot="9845e135a819718ec8d6d578cedac1e1.png" ScopeSelectorArgument="&lt;wnd app='spreviewwizard.exe' ctrlname='Verification' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                                               <uix:TargetAnchorable.FuzzySelectorArgument>
                                                 <InArgument x:TypeArguments="x:String">
                                                   <Literal x:TypeArguments="x:String" Value="" />
@@ -568,10 +559,10 @@
                       </Sequence>
                     </uix:NCheckState.IfNotExists>
                     <uix:NCheckState.Target>
-                      <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" CVScreenId="a2ac93d1-4dc7-4c60-b6ee-3bd1e928e0a9" CvTextArea="1815, 247, 67, 15" CvTextArgument="FileRoom" CvType="Text" DesignTimeRectangle="1804, 238, 113, 38" DesignTimeScaleFactor="1.25" FriendlyName="'FileRoom'" FullSelectorArgument="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl parentid='product-dropdown-btn' tableRow='1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='product-dropdown-btn' type='' tag='DIV' class='fr-toggle-div' aaname='                                       ' check:innerText='FileRoom' /&gt;" Guid="5bdee951-0463-41cd-b783-dfeaf4566931" InformativeScreenshot="35340da3deb4b8e9063a8d3adce3d1f7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                      <uix:TargetAnchorable BrowserURL="https://production.sureprep.com/Fileroom/Fileroom/Listing#" CVScreenId="a2ac93d1-4dc7-4c60-b6ee-3bd1e928e0a9" CvTextArea="1815, 247, 67, 15" CvTextArgument="FileRoom" CvType="Text" DesignTimeRectangle="1804, 238, 113, 38" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl parentid='product-dropdown-btn' tableRow='1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='product-dropdown-btn' type='' tag='DIV' class='fr-toggle-div' aaname='                                       ' check:innerText='FileRoom' /&gt;" Guid="5bdee951-0463-41cd-b783-dfeaf4566931" InformativeScreenshot="35340da3deb4b8e9063a8d3adce3d1f7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='FileRoom' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
                           <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CVScreenId="a2ac93d1-4dc7-4c60-b6ee-3bd1e928e0a9" CvElementArea="1668, 237, 117, 41" CvTextArea="1684, 247, 84, 21" CvTextArgument="Help Center" CvType="Button" DesignTimeRectangle="1667, 237, 119, 43" ElementType="Icon" FriendlyName="'IMG imgHelpCenter'" FullSelectorArgument="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='imgHelpCenter' tableRow='1' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='imgHelpCenter' type='' tag='IMG' class='mid' aaname='Help Center' /&gt;" SearchSteps="Selector" />
+                            <uix:Target CVScreenId="a2ac93d1-4dc7-4c60-b6ee-3bd1e928e0a9" CvElementArea="1668, 237, 117, 41" CvTextArea="1684, 247, 84, 21" CvTextArgument="Help Center" CvType="Button" DesignTimeRectangle="1667, 237, 119, 43" ElementType="Icon" FullSelectorArgument="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='imgHelpCenter' tableRow='1' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='imgHelpCenter' type='' tag='IMG' class='mid' aaname='Help Center' /&gt;" Guid="443def41-b762-4cfe-8bb6-6a9f0678977d" SearchSteps="Selector" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
                       </uix:TargetAnchorable>
@@ -603,7 +594,7 @@
                       </Sequence>
                     </uix:NCheckState.IfNotExists>
                     <uix:NCheckState.Target>
-                      <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1093, 629" DesignTimeScaleFactor="1.25" FriendlyName="'1040SCAN :'" Guid="dc853d12-3541-4538-b691-7449d8f4bb55" InformativeScreenshot="36d17f5ad63eec424127b6bf97df3bac.png" ScopeSelectorArgument="&lt;wnd app='spreviewwizard.exe' ctrlname='*Verification*' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                      <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1093, 629" DesignTimeScaleFactor="1.25" Guid="dc853d12-3541-4538-b691-7449d8f4bb55" InformativeScreenshot="36d17f5ad63eec424127b6bf97df3bac.png" ScopeSelectorArgument="&lt;wnd app='spreviewwizard.exe' ctrlname='*Verification*' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.FuzzySelectorArgument>
                           <InArgument x:TypeArguments="x:String">
                             <Literal x:TypeArguments="x:String" Value="" />
@@ -679,10 +670,10 @@
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="547.2,624.8" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1204.8,624.8" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
